@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" role="img"
+     aria-label="Placeholder for your map">
+  <rect width="800" height="480" fill="#f4f2ed"/>
+  <g stroke="#e0ddd5" stroke-width="1">
+    <path d="M0 60h800M0 120h800M0 180h800M0 240h800M0 300h800M0 360h800M0 420h800"/>
+    <path d="M60 0v480M140 0v480M220 0v480M300 0v480M380 0v480M460 0v480M540 0v480M620 0v480M700 0v480M780 0v480"/>
+  </g>
+  <path d="M120 400 L200 250 L300 300 L380 170 L470 210 L560 110 L680 150"
+        fill="none" stroke="#cfcbc1" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="200" cy="250" r="7" fill="#c0432b" opacity=".55"/>
+  <circle cx="380" cy="170" r="10" fill="#c0432b" opacity=".55"/>
+  <circle cx="560" cy="110" r="6" fill="#c0432b" opacity=".55"/>
+  <circle cx="300" cy="300" r="8" fill="#c0432b" opacity=".35"/>
+  <text x="400" y="255" text-anchor="middle" fill="#8d95a1"
+        font-family="-apple-system, Segoe UI, Helvetica Neue, Arial, sans-serif"
+        font-size="19" font-weight="600" letter-spacing="1.5">YOUR MAP GOES HERE</text>
+  <text x="400" y="283" text-anchor="middle" fill="#a8aeb8"
+        font-family="-apple-system, Segoe UI, Helvetica Neue, Arial, sans-serif"
+        font-size="14">Replace map-01.svg with your own export from ArcGIS or QGIS</text>
+</svg>
