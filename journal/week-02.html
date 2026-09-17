@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Week 01 · Zhuoer Zhou</title>
+<title>Week 02 · Zhuoer Zhou</title>
 
 <!-- Note the ../ — this page is inside the journal folder, so it has to
      look one level up to find the stylesheet. -->
@@ -27,71 +27,120 @@
 <article class="entry">
   <div class="wrap wrap-narrow">
 
-    <p class="kicker">Week 01 · September 2026</p>
+    <p class="kicker">Week 02 · September 2026</p>
 
-    <h1>The historic core is still mostly old</h1>
+    <h1>London and Chengdu: Different Seasonal Climate Patterns</h1>
 
     <h2>The question</h2>
     <p>
-      Where are older buildings concentrated in the City of London, and what
-      might this reveal about the persistence of London’s historic urban fabric?
+      How does the seasonal climate pattern at my London site compare with
+      Chengdu, and how does this comparison relate to the global distribution
+      and density of climate stations?
     </p>
 
     <h2>The data</h2>
     <p>
-      I used the Site Scanner’s “When it was built” layer to look at the age
-      of buildings in London. The layer shows different building-age
-      categories, including buildings built before 1975 and between 1975 and
-      1990. The satellite basemap provides the underlying view of the city.
-    </p>
-    <p>
-      I am using building age to stand for the persistence of older urban
-      development, and it might fail because building age does not show
-      renovations, rebuilding, or changes in how buildings are used.
+      I used Esri's <em>World Historical Climate — Monthly Averages for
+      GHCN-D Stations for 1981–2010</em>, based on NOAA NCEI's Global
+      Historical Climatology Network-Daily (GHCN-Daily) v3.24. The dataset
+      contains monthly average temperature and precipitation from climate
+      stations with sufficiently complete records between 1981 and 2010.
+      I accessed the dataset in September 2026 and used the 1981–2010
+      reference period for both London and Chengdu.
     </p>
 
     <h2>The method</h2>
     <p>
-      I used “Satellite (true color)” as the base layer and “When it was built”
-      as the overlay. I focused on the area around the City of London and set
-      the overlay opacity to 0.65 so that the building-age pattern could be
-      compared with the underlying satellite map.
+      I first viewed the full global station layer to examine the distribution
+      and density of climate stations. I then identified Heathrow
+      (GHCN-D ID: UKM00003772) as the station representing my London site
+      and Chengdu (GHCN-D ID: CHM00056294) as the comparison station. I
+      created bar charts using the twelve monthly average temperature fields
+      and the twelve monthly average precipitation fields. I used mean
+      aggregation to compare the monthly values for the two stations.
     </p>
 
-  <iframe width="700" height="600" allow="local-network-access; geolocation" title="Tutorial 1 · Climate normals · Zhuoer Zhou" src="https://nyuds.maps.arcgis.com/apps/mapviewer/index.html?configurableview=true&webmap=73a24d19dff14df39fc7291a7e1d280c&theme=light&heading=true&legend=true&scroll=false&basemaps=true&center=65.8370931024581,37.665270141283465&scale=36978595.474472" >
-       
-  </iframe>
+    <h2>The evidence</h2>
+
+    <figure>
+      <iframe
+        width="700"
+        height="600"
+        allow="local-network-access; geolocation"
+        title="Global climate station distribution map for the 1981–2010 climate normal"
+        src="https://nyuds.maps.arcgis.com/apps/mapviewer/index.html?configurableview=true&webmap=73a24d19dff14df39fc7291a7e1d280c&theme=light&heading=true&legend=true&scroll=false&basemaps=true&center=65.8370931024581,37.665270141283465&scale=36978595.474472">
+      </iframe>
+
       <figcaption>
-        In the City of London, most buildings shown on the map were built
-        before 1975 or between 1975 and 1990, while relatively few are in the
-        newer building-age categories.
+        Global distribution of climate stations used in the 1981–2010 climate
+        normal. The map appears to show relatively dense station coverage in
+        many low-latitude areas, including areas around the equator.
+      </figcaption>
+    </figure>
+
+    <figure>
+      <img
+        src="Average%20monthly%20temperature%2C%20Chengdu%20and%20London%20%281981%E2%80%932010%20normal%29.png"
+        alt="Average monthly temperature for Chengdu and Heathrow from 1981–2010, showing warmer summers and a larger seasonal temperature range in Chengdu, while Heathrow has milder seasonal variation.">
+
+      <figcaption>
+        Average monthly temperature, Chengdu and London (1981–2010 normal).
+        Temperature is shown in degrees Celsius (°C). Heathrow is used as the
+        climate station representing the London site.
+      </figcaption>
+    </figure>
+
+    <figure>
+      <img
+        src="Average%20monthly%20precipitation%2C%20Chengdu%20and%20London%20%281981%E2%80%932010%20normal%29.png"
+        alt="Average monthly precipitation for Chengdu and Heathrow from 1981–2010, showing a strong summer precipitation peak in Chengdu, while Heathrow has precipitation distributed more evenly throughout the year.">
+
+      <figcaption>
+        Average monthly precipitation, Chengdu and London (1981–2010 normal).
+        Precipitation is shown in millimeters (mm). Heathrow is used as the
+        climate station representing the London site.
       </figcaption>
     </figure>
 
     <h2>What I found</h2>
     <p>
-      The map shows a clear pattern in the distribution of building ages
-      around the City of London. There is a noticeable clustering of older
-      buildings, especially those built before 1975 and between 1975 and
-      1990. Newer buildings appear less frequently, suggesting a relationship
-      between the historic character of the City and the age of its built
-      environment.
+      The global station map appears to show relatively dense coverage in
+      many low-latitude areas, including regions around the equator, although
+      station density varies substantially between regions. The London and
+      Chengdu comparison shows a clear difference in seasonal climate. London
+      has a relatively moderate seasonal temperature range and precipitation
+      distributed throughout the year. Chengdu has warmer summers and a much
+      stronger summer precipitation peak, with considerably drier winter
+      months.
+    </p>
+
+    <p>
+      These differences can be partly explained by geographic location.
+      Chengdu is at a lower latitude and has a subtropical, monsoon-influenced
+      climate, while London is much farther north and has a maritime climate.
+      Topography also matters: Chengdu is located in the Sichuan Basin, with
+      the Tibetan Plateau and surrounding mountain systems to the west.
+      London, in contrast, is strongly influenced by its surrounding ocean.
+      These geographic and topographic differences help explain the different
+      seasonal patterns of temperature and precipitation shown in the charts.
     </p>
 
     <h2>What this does not show</h2>
     <div class="limits">
       <p>
-        This map does not show why these buildings are old or whether the
-        Great Fire of 1666 caused the pattern I see today. The Great Fire and
-        the rebuilding regulations that followed may have shaped the long-term
-        development of the City, but this map alone cannot show that. The
-        result may also look different if I zoomed out to include a larger
-        part of London.
+        This comparison uses the 1981–2010 reference period, which is older
+        than the current 1991–2020 climate normal. The Heathrow station
+        represents one location near London rather than the entire city, and
+        the Chengdu station similarly represents one measurement site. The
+        uneven distribution of stations also means that areas with fewer
+        points should not be interpreted as having less climate variability.
+        Finally, the map projection can affect how spatial density appears
+        visually.
       </p>
+
       <p>
-        <strong>AI use:</strong> AI-assisted for organizing and editing this
-        journal entry, using ChatGPT. I reviewed the text and verified that
-        the description matches my map and the work I completed.
+        <strong>AI use:</strong> The AI-usage disclosure has been submitted
+        separately on Brightspace rather than included on this public page.
       </p>
     </div>
 
