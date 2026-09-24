@@ -1,1 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Week 03 · Zhuoer Zhou</title>
 
+<!-- Note the ../ — this page is inside the journal folder, so it has to
+     look one level up to find the stylesheet. -->
+<link rel="stylesheet" href="../style.css">
+
+<!-- ArcGIS embedded map component -->
+<script type="module" src="https://js.arcgis.com/5.1/embeddable-components/"></script>
+</head>
+
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="../index.html">Zhuoer Zhou</a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../index.html#journal">Journal</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<article class="entry">
+  <div class="wrap wrap-narrow">
+
+    <p class="kicker">Week 03 · September 2026</p>
+
+    <h1>Terrain and the Shape of My Site</h1>
+
+    <h2>The question</h2>
+    <p>
+      What is the terrain pattern around my site near Millennium Bridge in
+      London, and how does its shape affect the movement of water and material
+      at this scale?
+    </p>
+
+    <h2>The data</h2>
+    <p>
+      I used the England_DTM1m elevation model from the Environment Agency.
+      The finest dataset at my site has a 1 m cell size, an LE90 of 0.1 m,
+      a Newlyn vertical datum, and data from 2020–2022. For soil, I used
+      SoilGrids organic carbon density at a depth of 5–15 cm, measured in
+      hg/m³.
+    </p>
+
+    <h2>The method</h2>
+    <p>
+      I derived slope from the elevation surface using a nine-cell
+      neighbourhood. I compared a continuous Stretch rendering with my own
+      classified rendering. The classified map uses five classes: 0–2°,
+      2–4°, 4–6°, 6–8°, and 8–60°. I also used SoilGrids to examine organic
+      carbon density.
+    </p>
+
+    <h2>The evidence</h2>
+
+    <figure>
+      <arcgis-embedded-map
+        style="height:600px;width:700px;"
+        item-id="6c6f4658ab03400eaae737887e04e7c0"
+        theme="light"
+        heading-enabled
+        legend-enabled
+        share-enabled
+        time-zone-label-enabled
+        center="-0.10268887248608254,51.50504731670705"
+        scale="36111.909643"
+        portal-url="https://nyuds.maps.arcgis.com">
+      </arcgis-embedded-map>
+
+      <figcaption>
+        Interactive ArcGIS map of the London site showing terrain and slope
+        information around Millennium Bridge.
+      </figcaption>
+    </figure>
+
+    <figure>
+      <img
+        src="Slope-Degrees-Stretch.png"
+        alt="Continuous Stretch rendering of slope degrees around the London site, showing generally gentle slopes around the Thames corridor and steeper areas in parts of northern and southern London.">
+
+      <figcaption>
+        Continuous Stretch rendering of Terrain — Slope Degrees, showing
+        gradual variation in slope across the London site and surrounding
+        area.
+      </figcaption>
+    </figure>
+
+    <figure>
+      <img
+        src="Slope-Degrees-Classified.png"
+        alt="Classified rendering of slope degrees using five classes from 0–2, 2–4, 4–6, 6–8, and 8–60 degrees, showing mostly low-slope areas around the Thames corridor.">
+
+      <figcaption>
+        Classified rendering of Terrain — Slope Degrees using five classes:
+        0–2°, 2–4°, 4–6°, 6–8°, and 8–60°.
+      </figcaption>
+    </figure>
+
+    <figure>
+      <img
+        src="SoilGrids-Organic-Carbon.png"
+        alt="SoilGrids map of organic carbon density at 5–15 cm depth around London, with a sampled value of 319 hg per cubic metre.">
+
+      <figcaption>
+        SoilGrids organic carbon density at 5–15 cm depth. The sampled point
+        has a value of 319 hg/m³.
+      </figcaption>
+    </figure>
+
+    <h2>What I found</h2>
+    <p>
+      My site is relatively typical of the low-lying Thames corridor, where
+      the terrain is generally gentle. At the site scale, the ground generally
+      falls from north to south, so surface water and loose material would
+      tend to move toward lower-lying areas around the Thames. The soil map
+      also shows spatial variation in organic carbon density, although these
+      values are model predictions rather than direct measurements at every
+      location.
+    </p>
+
+    <h2>What this does not show</h2>
+    <div class="limits">
+      <p>
+        The map cannot show whether a specific small feature or structure near
+        my site is safe or stable. Although the elevation model has a 1 m cell
+        size, slope is calculated from a nine-cell neighbourhood, so
+        smaller-scale features can be averaged out. Slope describes terrain
+        steepness but does not by itself show slope stability.
+      </p>
+
+      <p>
+        AI use: AI-assisted for organizing and checking the HTML and journal
+        wording using ChatGPT. I checked the map, metadata, symbology choices,
+        SoilGrids results, and interpretations myself.
+      </p>
+    </div>
+
+    <a class="back" href="../index.html#journal">← Back to all entries</a>
+
+  </div>
+</article>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap wrap-narrow">
+    <p>Zhuoer Zhou · SOCS-SHU 289 · NYU Shanghai · Fall 2026</p>
+  </div>
+</footer>
+
+</body>
+</html>
