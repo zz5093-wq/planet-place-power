@@ -1,73 +1,155 @@
-<h2>The question</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Week 04 · Zhuoer Zhou</title>
 
-<p>
-What is the green at my site, St James’s Park in central London, actually made of, and how does its pattern, scale, and density compare with greener and more built-up areas of the city?
-</p>
+<!-- Note the ../ — this page is inside the journal folder, so it has to
+     look one level up to find the stylesheet. -->
+<link rel="stylesheet" href="../style.css">
 
-
-<h2>The data</h2>
-
-<p>
-I used Landsat 8 imagery with a 30 m pixel size, acquired on July 30, 2024, with a reported scene cloud cover of 0.07. I used NDVI, calculated from the red (Band 4) and near-infrared (Band 5) bands. The Landsat imagery is publicly accessible through ArcGIS. My site’s NDVI was 0.43.
-</p>
-
-
-<h2>The method</h2>
-
-<p>
-I used the NDVI Raw processing template to obtain the numerical index and NDVI Colorized to visualize its spatial pattern. For the threshold exercise, I first used a lower bound of 0.5, then tested 0.6 and 0.4. The 0.5 threshold was useful for identifying areas with relatively high vegetation-index values, while changing the threshold demonstrated that the classification changes substantially with the cutoff. The final map uses colorized NDVI with a legend and scale bar.
-</p>
-
-
-<h2>The evidence</h2>
-
-<p>
-The interactive map below shows the spatial pattern of NDVI around my site in St James’s Park and the surrounding central London area.
-</p>
-
+<!-- ArcGIS embedded map component -->
 <script type="module" src="https://js.arcgis.com/5.1/embeddable-components/"></script>
+</head>
 
-<arcgis-embedded-map
-  style="height:600px;width:700px;"
-  item-id="86d3c2221641430da9b41226d971dc8a"
-  theme="light"
-  bookmarks-enabled
-  heading-enabled
-  legend-enabled
-  time-zone-label-enabled
-  center="-0.10049669679703738,51.48715038265921"
-  scale="144447.638572"
-  portal-url="https://nyuds.maps.arcgis.com">
-</arcgis-embedded-map>
+<body>
+<a class="skip" href="#main">Skip to content</a>
 
-<p>
-<em>Figure 1. NDVI Colorized map of St James’s Park and central London from Landsat 8, acquired July 30, 2024; reported cloud cover 0.07.</em>
-</p>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="../index.html">Zhuoer Zhou</a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../index.html#journal">Journal</a>
+    </nav>
+  </div>
+</header>
 
-<img
-  src="st_james_park_ndvi.png"
-  alt="NDVI Colorized map showing St James’s Park and surrounding central London, with variation in vegetation index across the urban area."
-  style="max-width:100%; height:auto;"
->
+<main id="main">
+<article class="entry">
+  <div class="wrap wrap-narrow">
 
-<p>
-My site has an NDVI of 0.43, while the selected comparison places were Hyde Park (0.69), Primrose Hill (0.66), and Canary Wharf (0.48). The relatively lower value at St James’s Park may partly reflect its central and compact urban setting; larger and more continuous vegetated areas toward the outskirts of London appear to contain more high-index pixels.
-</p>
+    <p class="kicker">Week 04 · October 2026</p>
 
+    <h1>What the Green Means</h1>
 
-<h2>What I found</h2>
+    <h2>The question</h2>
+    <p>
+      What is the green at my site, St James’s Park in central London,
+      actually made of, and how does its pattern, scale, and density compare
+      with greener and more built-up areas of the city?
+    </p>
 
-<p>
-My high-index, low-habitat example is the City of London financial district. Some pixels there remained above the 0.6 NDVI threshold, despite the area being a highly built-up commercial environment rather than a natural habitat. This illustrates that a high NDVI value can occur in a dense urban environment and does not necessarily mean that the area functions as habitat. At St James’s Park, the green appears to consist mainly of managed lawns, trees, and planted vegetation, rather than continuous natural habitat.
-</p>
+    <h2>The data</h2>
+    <p>
+      I used Landsat 8 imagery with a 30 m pixel size, acquired on July 30,
+      2024, with a reported scene cloud cover of 0.07. I used NDVI, calculated
+      from the red (Band 4) and near-infrared (Band 5) bands. The Landsat
+      service is publicly accessible through ArcGIS without a token. My site’s
+      NDVI was 0.43.
+    </p>
 
+    <h2>The method</h2>
+    <p>
+      I used the NDVI Raw processing template to obtain the numerical index
+      and NDVI Colorized to visualize its spatial pattern. For the threshold
+      exercise, I first used a lower bound of 0.5, then tested 0.6 and 0.4.
+      The 0.5 threshold was useful for identifying areas with relatively high
+      vegetation-index values, while changing the threshold demonstrated that
+      the classification changes substantially with the cutoff. The final map
+      uses colorized NDVI with a legend and scale bar.
+    </p>
 
-<h2>What this does not show</h2>
+    <h2>The evidence</h2>
 
-<p>
-A high NDVI value should not be interpreted as evidence that an area contains more or better habitat. <strong>I am using NDVI to stand for the amount of living habitat at my St James’s Park site, and it might fail because a 30 m pixel can combine managed lawns, trees and planted areas with surrounding built surfaces, producing a relatively high vegetation index without showing whether the vegetation actually functions as habitat.</strong>
-</p>
+    <figure>
+      <arcgis-embedded-map
+        style="height:600px;width:700px;"
+        item-id="86d3c2221641430da9b41226d971dc8a"
+        theme="light"
+        bookmarks-enabled
+        heading-enabled
+        legend-enabled
+        time-zone-label-enabled
+        center="-0.10049669679703738,51.48715038265921"
+        scale="144447.638572"
+        portal-url="https://nyuds.maps.arcgis.com">
+      </arcgis-embedded-map>
 
-<p>
-<strong>AI disclosure:</strong> AI was used to help organize and edit my writing and interpret the assignment instructions; the site observations, measurements, and analysis are my own.
-</p>
+      <figcaption>
+        Interactive ArcGIS map of St James’s Park and the surrounding central
+        London area. The map shows the spatial pattern of NDVI using the
+        Landsat 8 imagery.
+      </figcaption>
+    </figure>
+
+    <figure>
+      <img
+        src="st_james_park_ndvi.png"
+        alt="NDVI Colorized map showing St James’s Park and surrounding central London, with variation in vegetation index across the urban area.">
+
+      <figcaption>
+        NDVI Colorized map of St James’s Park and central London from Landsat 8,
+        acquired July 30, 2024, with reported scene cloud cover of 0.07.
+      </figcaption>
+    </figure>
+
+    <p>
+      My site has an NDVI of 0.43, while the selected comparison places were
+      Hyde Park (0.69), Primrose Hill (0.66), and Canary Wharf (0.48). The
+      relatively lower value at St James’s Park may partly reflect its central
+      and compact urban setting; larger and more continuous vegetated areas
+      toward the outskirts of London appear to contain more high-index pixels.
+    </p>
+
+    <h2>What I found</h2>
+    <p>
+  My high-index, low-habitat example is the City of London financial
+  district. Some pixels there remained above the 0.6 NDVI threshold,
+  despite the area being a highly built-up commercial environment rather
+  than a natural habitat. This illustrates that a high NDVI value can
+  occur in a dense urban environment and does not necessarily mean that
+  the area functions as habitat. In contrast, some areas along the Thames
+  riverbank remained dark or had relatively low NDVI values, but these
+  areas can still have ecological value as riverside or intertidal
+  environments. At St James’s Park, the green appears to consist mainly
+  of managed lawns, trees, and planted vegetation, rather than continuous
+  natural habitat.
+    </p>
+
+    <h2>What this does not show</h2>
+    <div class="limits">
+
+      <p>
+        A high NDVI value should not be interpreted as evidence that an area
+        contains more or better habitat. I am using NDVI to stand for the
+        amount of living habitat at my St James’s Park site, and it might fail
+        because a 30 m pixel can combine managed lawns, trees and planted
+        areas with surrounding built surfaces, producing a relatively high
+        vegetation index without showing whether the vegetation actually
+        functions as habitat.
+      </p>
+
+      <p>
+        AI use: AI-assisted for organizing and checking the HTML and journal
+        wording using ChatGPT. I checked the map, imagery date, NDVI values,
+        symbology choices, and interpretations myself.
+      </p>
+
+    </div>
+
+    <a class="back" href="../index.html#journal">← Back to all entries</a>
+
+  </div>
+</article>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap wrap-narrow">
+    <p>Zhuoer Zhou · SOCS-SHU 289 · NYU Shanghai · Fall 2026</p>
+  </div>
+</footer>
+
+</body>
+</html>
