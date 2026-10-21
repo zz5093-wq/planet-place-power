@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,125 +31,113 @@
 
 <h2>The question</h2>
 <p>
-How did land cover around central London change between 2017
-and 2025, and what kinds of change cannot be captured by a
-land-cover map? My study site is NYU London's academic centre
-at 265 Strand. The building was converted from commercial
-use into a university facility, benefiting students and staff
-through new learning spaces. I wanted to examine how the
-pattern and distribution of land-cover classes relate to
-changes in the urban environment.
+How did land cover in central London change between 2017 and
+2024, and what kinds of urban change remain invisible to
+land-cover maps? At 265 Strand, a commercial building was
+converted into NYU London's academic centre. This change
+benefited students and staff by providing university facilities.
+It also raises questions about how patterns and distributions
+of land-cover classes represent physical change while leaving
+changes in building use less visible.
 </p>
 
 <h2>The data</h2>
 <p>
 I used the Sentinel-2 10 m Land Use/Land Cover Time Series
-produced by Esri and Impact Observatory. I selected 2017
-and 2025 for the main comparison, and 2024 for an additional
-check because NYU London moved into its new academic centre
-that year. The dataset has a spatial resolution of 10 m.
-The layer is provided under the Esri Master License Agreement,
-while the source land-cover data is licensed under CC BY 4.0.
+produced by Esri and Impact Observatory. I selected 2017 and
+2024 for the main comparison because NYU London moved into
+its new academic centre at 265 Strand in autumn 2024. This
+made 2024 a meaningful date for examining land-cover patterns
+around the time of the site's change in use. I also compared
+2017 with 2025 as a third-date check. The dataset has a native
+spatial resolution of 10 m per pixel. The layer is provided
+under the Esri Master License Agreement, while the source
+land-cover data is licensed under CC BY 4.0.
 </p>
 
 <h2>The method</h2>
 <p>
-I located 265 Strand in the Land Cover Explorer and selected
-LAND COVER and SWIPE mode. I kept the same map extent,
-native resolution (1 pixel = 10 m), land-cover categories,
-and rendering for both dates. The main comparison was
-2017 versus 2025. I then changed the earlier year to 2024,
-keeping 2025 as the later year, to check whether the
-observed pattern remained consistent.
+I used the Land Cover Explorer in LAND COVER and SWIPE mode.
+I kept the map extent, native resolution (1 pixel = 10 m),
+land-cover product, and rendering consistent between the
+two dates. I compared 2017 with 2024, then checked 2017
+against 2025 to see whether the pattern persisted. The
+change panel reported Water +0.1%, Built Area −0.4%,
+and Rangeland +0.2% for 2017–2024. For 2017–2025, it
+reported Trees −0.6% and Rangeland +0.6%. The 2024–2025
+comparison additionally reported Trees −0.7%, Built Area
++0.4%, and Rangeland +0.3%.
 </p>
 
 <p>
-The change panel showed Trees decreasing by 0.6% and
-Rangeland increasing by 0.6% between 2017 and 2025.
-For 2024–2025, Trees decreased by 0.7%, Built Area
-increased by 0.4%, and Rangeland increased by 0.3%.
-These values refer to the selected map extent rather
-than the individual university building.
+<a href="https://livingatlas.arcgis.com/landcoverexplorer/#mapCenter=-0.11462%2C51.51330%2C13.95&amp;mode=swipe&amp;timeExtent=2017%2C2024"
+target="_blank" rel="noopener noreferrer">
+Open the interactive land-cover comparison: 2017 vs 2024
+</a>
 </p>
 
 <h2>The evidence</h2>
 
-<!-- Figure 1: Sentinel-2 land-cover comparison -->
 <figure>
-
-  <!-- Alt text is inside the img tag below -->
   <img
-    src="week-06-land-cover-2017-2025.png"
-    alt="Land-cover comparison of central London in 2017 and 2025. The change panel shows Trees decreasing by 0.6% and Rangeland increasing by 0.6% across the selected map extent."
+    src="week-06-land-cover-2017-2024.png"
+    alt="Land-cover comparison of central London in 2017 and 2024. The change panel reports Water increasing by 0.1%, Built Area decreasing by 0.4%, and Rangeland increasing by 0.2% across the selected map extent."
     style="width:100%; height:auto;"
     loading="lazy">
 
   <figcaption>
-    Figure 1. Sentinel-2 land-cover comparison of central
-    London in 2017 and 2025, shown in SWIPE mode at
-    10 m spatial resolution (1 pixel = 10 m).
-    The change panel reports Trees −0.6% and
-    Rangeland +0.6% across the selected extent.
-    Source: Esri and Impact Observatory,
-    Land Cover Explorer; accessed 20 October 2026.
+    Figure 1. Sentinel-2 10 m Land Use/Land Cover comparison
+    of central London in 2017 and 2024, displayed in SWIPE mode
+    at native resolution (1 pixel = 10 m). The change panel
+    reports Water +0.1%, Built Area −0.4%, and Rangeland +0.2%
+    across the selected extent. Source: Esri and Impact Observatory,
+    Land Cover Explorer; accessed October 2026.
   </figcaption>
-
 </figure>
-
-<!-- Clickable app link underneath the figure -->
-<p>
-  <a
-    href="https://livingatlas.arcgis.com/landcoverexplorer/#mapCenter=-0.11462%2C51.51330%2C13.95&amp;mode=swipe&amp;timeExtent=2017%2C2025"
-    target="_blank"
-    rel="noopener noreferrer">
-    Open the interactive land-cover comparison:
-    2017 vs 2025
-  </a>
-</p>
 
 <h2>What I found</h2>
 <p>
-The 2017–2025 comparison showed a small decrease in Trees
-and an increase in Rangeland across the mapped area.
-The 2024–2025 comparison showed a similar direction
-of change for these two classes, although Built Area
-also increased in the shorter comparison.
-This suggests that the reported pattern depends partly
-on the years selected.
+Between 2017 and 2024, the change panel reported a small
+increase in Water and Rangeland and a decrease in Built Area
+within the selected map extent. In the 2017–2025 comparison,
+Trees decreased and Rangeland increased. The 2024–2025
+comparison showed a decrease in Trees and increases in both
+Built Area and Rangeland. The reported pattern therefore
+varied with the comparison period.
 </p>
 
 <p>
-However, another important change is not directly visible:
-the conversion of the commercial building at 265 Strand
-into NYU London's academic centre in 2024.
-The land-cover classification cannot distinguish a
-commercial office building from a university building,
-as both can fall under Built Area.
+A separate change that the classification cannot directly
+show is the conversion of the commercial building at 265 Strand
+into NYU London's academic centre in 2024. The building may
+remain classified as Built Area despite its changed function.
+This is a change in building use, not necessarily a change
+in land cover.
 </p>
 
 <h2>What this does not show</h2>
 <div class="limits">
 
 <p>
-I am using the Built Area class to stand for developed
-urban land, and it might fail to represent changes in
-building function because the classification does not
-distinguish commercial offices from university facilities.
-This is a limitation of the class definitions rather
-than necessarily a classification error.
+I am using the Built Area class to stand for developed urban
+land, and it might fail to represent changes in building
+function because the classification does not distinguish
+commercial offices from university facilities. This is a
+limitation of the class definitions, not necessarily an error.
 </p>
 
 <p>
-The comparison also cannot establish that the reported
-changes in Trees or Rangeland were caused by the
-redevelopment of 265 Strand.
+The mapped changes do not establish that NYU London's
+redevelopment caused changes in land-cover classes across
+the selected area. The comparison covers a wider area and
+does not identify the cause of each change.
 </p>
 
 <p>
-AI disclosure: I used ChatGPT to help organise 
-this journal entry. I checked the selected years,
-resolution, and change values against my observations
-in the Land Cover Explorer.
+AI disclosure: I used ChatGPT to help organise and draft
+this entry. I checked the selected years, resolution, and
+reported change values against my observations in the
+Land Cover Explorer.
 </p>
 
 </div>
