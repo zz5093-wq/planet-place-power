@@ -1,124 +1,159 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Week 07 Journal — UK Exports</title>
-  <script type="module" src="https://js.arcgis.com/5.1/embeddable-components/"></script>
-  <style>
-    body {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1.25rem;
-      font-family: Arial, sans-serif;
-      line-height: 1.65;
-      color: #222;
-    }
-    h1, h2 { line-height: 1.25; }
-    arcgis-embedded-map {
-      display: block;
-      width: 100%;
-      height: 600px;
-    }
-    .note { color: #555; font-size: 0.95rem; }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Week 07 · Zhuoer Zhou</title>
+
+<link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
-  <h1>Week 07 Journal: Mapping UK Exports, 2024</h1>
+<a class="skip" href="#main">Skip to content</a>
 
-  <h2>1. Expectation</h2>
-  <p>
-    I used the Atlas of Economic Complexity to examine the United Kingdom’s
-    export destinations in 2024. In the product view, services appeared as the
-    largest broad category, with an export value of approximately $235 billion
-    and a share of 21.35%. This is a broad category rather than a specific
-    physical product, which changes how I interpret the idea of locating an
-    export. Many services are delivered digitally or through professional
-    networks rather than shipped from a factory or port. The results show
-    that the UK’s export economy cannot be understood only through physical
-    commodities and their production locations.
-  </p>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="../index.html">Zhuoer Zhou</a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../index.html#journal">Journal</a>
+    </nav>
+  </div>
+</header>
 
-  <h2>2. Data and method</h2>
-  <p>
-    I used the Atlas of Economic Complexity’s 2024 UK export-destination data
-    and Natural Earth Admin 0 – Countries (1:110m) as the boundary layer.
-    In ArcGIS Online, I created a left join using the ADMIN field in the
-    boundary layer and the Name field in the export table. I then styled the
-    joined layer using Counts and Amounts (Color), based on the export-value
-    field. Finally, I added a point layer showing the City of London,
-    Canary Wharf, and Heathrow Airport as illustrative locations associated
-    with financial, business, travel, and international connectivity services.
-  </p>
+<main id="main">
+<article class="entry">
+<div class="wrap wrap-narrow">
 
-  <h2>3. The join</h2>
-  <p>
-    The join used exact name matching rather than geographic similarity.
-    Of the 177 records in the boundary layer, 13 had no matched export value.
-    These blank values should not automatically be interpreted as zero
-    exports: they may result from differences between country names in the
-    two datasets. A left join retains boundary records even when no matching
-    table row is found. The reverse direction must also be checked separately
-    to identify export-table rows that did not match any polygon.
-    The two fields used were ADMIN (boundary layer) and Name (export table).
-  </p>
+<p class="kicker">Week 07 · October 2026</p>
 
-  <h2>4. The physical link</h2>
-  <p>
-    The three selected points provide examples of locations associated with
-    services and international connections. The City of London and Canary
-    Wharf are business and financial districts, while Heathrow Airport is
-    an international aviation hub. These locations help illustrate that
-    service exports may depend on office networks, professional expertise,
-    and transport connections rather than a single extraction site or factory.
-    However, the points do not show measured export values and do not prove
-    that these specific locations generated a particular share of UK exports.
-  </p>
+<h1>Mapping UK Exports, 2024</h1>
 
-  <h2>5. Limits</h2>
-  <p>
-    The choropleth displays export values by destination, but shading an
-    entire country can make a trade total appear to be a property of every
-    location within its borders. The map does not show exactly where value
-    was produced, who benefited, or how each service was delivered. The
-    1:110m boundary data generalises geography, and the name-based join
-    leaves 13 boundary records without matched export values. The three
-    points are selective examples rather than a complete representation
-    of the UK service economy. Therefore, the map should not be used to infer
-    local economic activity directly from national trade totals.
-  </p>
+<h2>The question</h2>
+<p>
+Where did the United Kingdom export its products and services in
+2024, and what can a destination-level map tell us about the
+geography of trade? I wanted to compare export values across
+countries and connect this global pattern to physical locations
+within the UK. However, a map of export destinations does not
+necessarily show where exports are produced or which specific
+places support them.
+</p>
 
-  <h2>6. Sources and AI disclosure</h2>
-  <p>
-    Sources: Atlas of Economic Complexity, UK exports for 2024; Natural Earth
-    Admin 0 – Countries (1:110m). I used ChatGPT to help organise the journal
-    and prepare the HTML structure. I selected and created the ArcGIS layers.
-    I checked the joined attribute table and identified 13 unmatched records
-    among the 177 boundary records. The map and interpretation should be
-    understood in light of the limitations described above.
-  </p>
+<h2>The data</h2>
+<p>
+I used the Atlas of Economic Complexity's UK export data for
+2024 and Natural Earth's Admin 0 – Countries boundary dataset
+at 1:110m scale. The CSV contains destination names, gross export
+values, and export shares. I joined the destination data to
+country polygons by matching the CSV's Name field with Natural
+Earth's ADMIN field. I also prepared a point layer showing the
+City of London, Canary Wharf, and Heathrow Airport as illustrative
+locations associated with the UK's services and international
+connectivity.
+</p>
 
-  <h2>Interactive map</h2>
-  <p class="note">
-    This interactive map displays UK export destinations alongside three
-    illustrative locations associated with services and international
-    connectivity. Zoom in to the United Kingdom to distinguish the points.
-  </p>
+<h2>The method</h2>
+<p>
+I created a joined view in ArcGIS Online and styled Gross_Export
+using Counts and Amounts (Color) to make a choropleth map.
+I then added the three illustrative locations as a point layer.
+To check the join, I examined the boundary records without a
+matched export value and separately compared the CSV destination
+names against the boundary names. The two checks helped identify
+potential omissions caused by differences between the datasets.
+</p>
 
-  <arcgis-embedded-map
-    style="height:600px;width:100%;"
-    item-id="decdf997349d499a8181576991e0b7bb"
-    theme="light"
-    heading-enabled
-    legend-enabled
-    time-zone-label-enabled
-    center="-2.0,54.0"
-    scale="147914381.897889"
-    portal-url="https://nyuds.maps.arcgis.com">
-  </arcgis-embedded-map>
+<p>
+<a href="https://nyuds.maps.arcgis.com/apps/mapviewer/index.html?webmap=decdf997349d499a8181576991e0b7bb"
+target="_blank" rel="noopener noreferrer">
+Open the interactive map: UK Export Destinations, 2024
+</a>
+</p>
+
+<h2>The evidence</h2>
+
+<figure>
+  <img
+    src="week-07-uk-exports-2024.png"
+    alt="Choropleth map of UK export destinations in 2024, with country boundaries shaded by gross export value and illustrative points for the City of London, Canary Wharf, and Heathrow Airport."
+    style="width:100%; height:auto;"
+    loading="lazy">
+
+  <figcaption>
+    Figure 1. UK export destinations in 2024, mapped using
+    Natural Earth country boundaries joined to export data from
+    the Atlas of Economic Complexity. The map uses graduated
+    colors to represent Gross_Export and includes three illustrative
+    UK locations related to services and international connectivity.
+    Sources: Atlas of Economic Complexity and Natural Earth;
+    accessed October 2026.
+  </figcaption>
+</figure>
+
+<h2>What I found</h2>
+<p>
+The join revealed two different types of mismatch. In the joined
+boundary table, 13 boundary records had no matched export value.
+In the opposite direction, 59 CSV records did not have an exact
+name match in the boundary dataset. These figures come from
+different directions of checking and should not be added together.
+They also do not mean that all these places had no trade: differences
+in country naming conventions can prevent an exact match.
+</p>
+
+<p>
+The point layer adds a physical perspective to the destination
+map. The City of London and Canary Wharf illustrate important
+financial and business districts, while Heathrow illustrates
+international transport connectivity. These are contextual
+examples, not verified origins of the export values shown.
+The map therefore connects trade patterns with relevant places
+without proving a direct causal relationship.
+</p>
+
+<h2>What this does not show</h2>
+<div class="limits">
+
+<p>
+The map depends on the quality of the source data and the name-based
+join. Country names may differ between datasets, so exact-name
+matching can leave records unmatched even when the corresponding
+geographic entity exists. Matching by a standardized country code
+could help reduce this limitation.
+</p>
+
+<p>
+The choropleth represents destination-level export values; it does
+not show trade routes, the location of exporting firms, or the
+contribution of individual cities and facilities. The three points
+are illustrative locations rather than evidence that those places
+directly generated particular exports. The CSV also does not itself
+clearly specify the currency unit, so this should be verified against
+the source metadata before interpreting the values as USD.
+</p>
+
+<p>
+AI disclosure: I used ChatGPT to help organise and draft this entry.
+I checked the join results against the export table and boundary
+dataset and used my ArcGIS Online map for the spatial analysis.
+</p>
+
+</div>
+
+<a class="back" href="../index.html#journal">
+← Back to all entries
+</a>
+
+</div>
+</article>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap wrap-narrow">
+    <p>Zhuoer Zhou · SOCS-SHU 289 · NYU Shanghai · Fall 2026</p>
+  </div>
+</footer>
 
 </body>
 </html>
-
