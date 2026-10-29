@@ -34,10 +34,10 @@
 Where did the United Kingdom export its products and services in
 2024, and what can a destination-level map tell us about the
 geography of trade? I wanted to compare export values across
-countries and connect this global pattern to physical locations
-within the UK. However, a map of export destinations does not
-necessarily show where exports are produced or which specific
-places support them.
+countries and connect this global pattern to the UK's services
+economy. I was particularly interested in whether the map revealed
+a concentration of exports in nearby European countries, as well
+as the importance of more distant destinations such as China.
 </p>
 
 <h2>The data</h2>
@@ -49,8 +49,8 @@ values, and export shares. I joined the destination data to
 country polygons by matching the CSV's Name field with Natural
 Earth's ADMIN field. I also prepared a point layer showing the
 City of London, Canary Wharf, and Heathrow Airport as illustrative
-locations associated with the UK's services and international
-connectivity.
+locations associated with the UK's services economy and
+international connectivity.
 </p>
 
 <h2>The method</h2>
@@ -58,10 +58,10 @@ connectivity.
 I created a joined view in ArcGIS Online and styled Gross_Export
 using Counts and Amounts (Color) to make a choropleth map.
 I then added the three illustrative locations as a point layer.
-To check the join, I examined the boundary records without a
-matched export value and separately compared the CSV destination
-names against the boundary names. The two checks helped identify
-potential omissions caused by differences between the datasets.
+To check the join, I examined boundary records without a matched
+export value and separately compared CSV destination names against
+the boundary names. These checks helped identify potential
+omissions caused by differences between the datasets.
 </p>
 
 <p>
@@ -83,54 +83,64 @@ Open the interactive map: UK Export Destinations, 2024
   <figcaption>
     Figure 1. UK export destinations in 2024, mapped using
     Natural Earth country boundaries joined to export data from
-    the Atlas of Economic Complexity. The map uses graduated
-    colors to represent Gross_Export and includes three illustrative
-    UK locations related to services and international connectivity.
-    Sources: Atlas of Economic Complexity and Natural Earth;
-    accessed October 2026.
+    the Atlas of Economic Complexity. Graduated colors represent
+    Gross_Export, while the point layer identifies three illustrative
+    UK locations associated with services and international
+    connectivity. Sources: Atlas of Economic Complexity and
+    Natural Earth; accessed October 2026.
   </figcaption>
 </figure>
 
 <h2>What I found</h2>
 <p>
-The join revealed two different types of mismatch. In the joined
-boundary table, 13 boundary records had no matched export value.
-In the opposite direction, 59 CSV records did not have an exact
-name match in the boundary dataset. These figures come from
-different directions of checking and should not be added together.
-They also do not mean that all these places had no trade: differences
-in country naming conventions can prevent an exact match.
+London has a highly developed services economy, but the export
+map suggests that UK exports are concentrated in nearby
+destinations, particularly in Europe, while China also appears
+as an important destination. This pattern may reflect the UK's
+strong economic ties with European markets and its connections
+with major global trading partners. It could also be influenced
+by policy and institutional factors, including visa requirements,
+customs procedures, and other barriers to cross-border exchange.
+However, some of the apparent concentration may result from
+missing data or unmatched country names. The map reveals the
+geographical pattern of reported exports, but further research
+would be needed to determine how much is explained by economic
+relationships, policy differences, or data limitations.
 </p>
 
 <p>
-London has a highly developed services economy, but the export map suggests that UK exports are concentrated in nearby destinations, 
-particularly in Europe, while China also appears as an important destination. 
-This pattern may reflect the UK's strong economic ties with European markets and its connections with major global trading partners. 
-It could also be influenced by policy and institutional factors, including visa requirements, customs procedures, 
-and other barriers to cross-border exchange. However, some of the apparent concentration may result from missing data or unmatched country names. 
-The map reveals the geographical pattern of reported exports, but further research would be needed to determine how much is explained by economic relationships, 
-policy differences, or data limitations.
+The point layer adds a physical perspective to this pattern.
+The City of London and Canary Wharf represent important financial
+and business districts, while Heathrow illustrates international
+transport connectivity. These locations help connect the UK's
+services economy with the infrastructure and business activities
+that support international exchange. However, the points are
+illustrative rather than verified origins of the export values
+shown on the map.
 </p>
 
 <h2>What this does not show</h2>
 <div class="limits">
 
 <p>
-The map depends on the quality of the source data and the name-based
-join. Country names may differ between datasets, so exact-name
-matching can leave records unmatched even when the corresponding
-geographic entity exists. Matching by a standardized country code
-could help reduce this limitation.
+The join depends on matching country names across two datasets.
+In the joined boundary table, 13 boundary records had no matched
+export value. In the opposite direction, 59 CSV records did not
+have an exact name match in the boundary dataset. These figures
+come from different directions of checking and should not be
+added together. They also do not mean that all these places had
+no trade, since differences in naming conventions can prevent
+records from matching.
 </p>
 
 <p>
-The choropleth represents destination-level export values; it does
-not show trade routes, the location of exporting firms, or the
-contribution of individual cities and facilities. The three points
-are illustrative locations rather than evidence that those places
-directly generated particular exports. The CSV also does not itself
-clearly specify the currency unit, so this should be verified against
-the source metadata before interpreting the values as USD.
+The choropleth shows destination-level export values, not the
+routes, firms, or specific places responsible for trade. It
+cannot establish that visa requirements, customs procedures,
+or other UK policies caused the observed geographical pattern.
+The CSV also does not itself clearly specify the currency unit,
+so this should be verified against the source metadata before
+interpreting the values as USD.
 </p>
 
 </div>
