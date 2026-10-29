@@ -6,6 +6,11 @@
 <title>Week 07 · Zhuoer Zhou</title>
 
 <link rel="stylesheet" href="../style.css">
+
+<script
+  type="module"
+  src="https://js.arcgis.com/5.1/embeddable-components/">
+</script>
 </head>
 
 <body>
@@ -65,11 +70,23 @@ omissions caused by differences between the datasets.
 </p>
 
 <p>
-<a href="https://nyuds.maps.arcgis.com/apps/mapviewer/index.html?webmap=decdf997349d499a8181576991e0b7bb"
-target="_blank" rel="noopener noreferrer">
-Open the interactive map: UK Export Destinations, 2024
-</a>
+Explore the interactive map below to compare UK export destinations
+in 2024 and examine the illustrative locations within the UK.
 </p>
+
+<div style="margin: 24px 0;">
+  <arcgis-embedded-map
+    style="height:600px;width:100%;"
+    item-id="decdf997349d499a8181576991e0b7bb"
+    theme="light"
+    heading-enabled
+    legend-enabled
+    time-zone-label-enabled
+    center="-2.0,54.0"
+    scale="147914381.897889"
+    portal-url="https://nyuds.maps.arcgis.com">
+  </arcgis-embedded-map>
+</div>
 
 <h2>The evidence</h2>
 
