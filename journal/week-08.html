@@ -1,1 +1,243 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Week 08 · Zhuoer Zhou</title>
+
+<link rel="stylesheet" href="../style.css">
+
+<script
+  type="module"
+  src="https://js.arcgis.com/5.1/embeddable-components/">
+</script>
+</head>
+
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="../index.html">Zhuoer Zhou</a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../index.html#journal">Journal</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<article class="entry">
+<div class="wrap wrap-narrow">
+
+<p class="kicker">Week 08 · November 2026</p>
+
+<h1>Mapping Digital Infrastructure in London and Southeast England</h1>
+
+<h2>The question</h2>
+<p>
+How does London connect to international digital networks despite
+being an inland city? I wanted to explore the relationship between
+the electricity and telecommunications infrastructure in London
+and the submarine cable landing points along the southeast coast
+of England. I was particularly interested in how coastal locations
+such as Brighton, Newhaven, and Pevensey Bay contribute to a wider
+regional network that supports digital connectivity in London.
+</p>
+
+<h2>The data</h2>
+<p>
+I used three main sources. OpenStreetMap (OSM), accessed on
+2 November 2026, is maintained by the OpenStreetMap community
+and distributed under the Open Database License (ODbL). Its
+data can be reused with attribution and under the licence's
+share-alike requirements. I exported the OSM power data as
+GeoJSON and published it as a hosted feature layer in ArcGIS Online.
+</p>
+
+<p>
+The second source was TeleGeography's Submarine Cable Map,
+accessed in November 2026. It provided information about cable
+routes, landing points, owners, and service dates. Map references
+and screenshots may be reused under CC BY-SA 4.0 with attribution,
+but the underlying database is restricted to subscribers.
+I therefore recorded the landing points manually rather than
+downloading its database.
+</p>
+
+<p>
+The third source was Data Center Map, accessed on
+2 November 2026 and operated by Data Center Map ApS.
+Its Terms of Use restrict automated data collection and
+unauthorized copying or republication. I used manual browsing
+and linked to the original website instead of reproducing
+its database.
+</p>
+
+<h2>The method</h2>
+<p>
+I used Overpass Turbo to query two groups of OSM objects.
+The telecommunications query was:
+</p>
+
+<pre><code>[out:json][timeout:60];
+nwr["telecom"]({{bbox}});
+out center;</code></pre>
+
+<p>
+The power query was:
+</p>
+
+<pre><code>[out:json][timeout:120];
+(
+  nwr["power"="substation"]({{bbox}});
+  nwr["power"="tower"]({{bbox}});
+);
+out center;</code></pre>
+
+<p>
+The first query returned 620 telecommunications-related
+objects, including 80 nodes, 532 ways, and 8 relations.
+The second returned 16,269 power infrastructure objects:
+8,806 substations and 7,463 power towers. Both queries used
+the visible map extent covering London and parts of southeast
+England, including the coastal area around Brighton.
+I used the overpass-api.de server. The telecom response
+recorded an OSM data timestamp of 2 November 2026,
+12:20:27 UTC.
+</p>
+
+<h2>The evidence</h2>
+<p>
+The map combines OSM power infrastructure with four manually
+recorded submarine cable landing points: Brighton, Newhaven,
+Pevensey Bay, and Portsmouth. These points represent the
+British ends of Crosslake Fibre, Q&amp;E South, Circe South,
+and Portsmouth–Ryde 10 respectively. The OSM layer was
+exported as GeoJSON, while the landing points were entered
+separately using coordinates read from TeleGeography.
+</p>
+
+<p>
+Explore the map below to examine the distribution of power
+infrastructure and the location of submarine cable landing
+points across London and southeast England.
+</p>
+
+<div style="margin: 24px 0;">
+  <arcgis-embedded-map
+    style="height:600px;width:100%;"
+    item-id="996404a3591d4a5488c549a13b8ee43e"
+    theme="light"
+    heading-enabled
+    legend-enabled
+    time-zone-label-enabled
+    center="0.08840822656224874,50.953827115980054"
+    scale="1155581.108577"
+    portal-url="https://nyuds.maps.arcgis.com">
+  </arcgis-embedded-map>
+</div>
+
+<h2>The evidence</h2>
+
+<figure>
+  <figcaption>
+    Figure 1. Digital infrastructure across London and southeast
+    England. Orange points show electricity infrastructure
+    (power=substation and power=tower) recorded in OpenStreetMap.
+    The additional point layer identifies submarine cable landing
+    points at Brighton, Newhaven, Pevensey Bay, and Portsmouth.
+    Sources: OpenStreetMap via Overpass Turbo and TeleGeography's
+    Submarine Cable Map; accessed November 2026.
+
+    Contains information from OpenStreetMap, which is made
+    available here under the Open Database License (ODbL).
+  </figcaption>
+</figure>
+
+<h2>What I found</h2>
+<p>
+The map shows a dense distribution of mapped electricity
+infrastructure across London and much of southeast England.
+The concentration of points is particularly visible around
+London and along several major corridors extending towards
+the south coast. This suggests that digital infrastructure
+should not be understood only at the scale of an individual
+city.
+</p>
+
+<p>
+An important finding is that London, despite being an inland
+city, is connected to international submarine cable networks
+through coastal landing points in the surrounding region.
+Brighton, Newhaven, and Pevensey Bay provide examples of
+locations where international submarine cables reach the
+British coast. The map brings these coastal nodes together
+with the wider distribution of inland infrastructure,
+suggesting a degree of regional continuity between coastal
+connectivity and the urban networks that support London.
+In this sense, London's digital connectivity extends beyond
+its administrative boundaries and depends on infrastructure
+distributed across different places and geographical scales.
+</p>
+
+<p>
+Data Center Map's London page displayed 226 facilities from
+162 operators in the browser tab, while the page body stated
+that it listed 273 data center locations. This difference
+also highlights how commercial databases may use different
+counting units.
+</p>
+
+<h2>What this does not show</h2>
+<div class="limits">
+
+<p>
+The map does not show the actual routes of underground
+telecommunications cables connecting the coastal landing
+points to London. The spatial relationship between the
+landing points and inland infrastructure suggests regional
+connectivity, but it does not prove the exact route or
+operator of those connections.
+</p>
+
+<p>
+The relatively small number of mapped power points around
+Portsmouth may partly reflect the western boundary of my
+original Overpass query extent, which did not fully cover
+the area around the Portsmouth landing point. This should
+not be interpreted as evidence that Portsmouth has little
+electricity infrastructure. In addition, OSM records depend
+on what contributors can identify and map. Underground
+infrastructure and facilities that cannot be observed
+directly may be underrepresented.
+</p>
+
+<p>
+I am using mapped digital infrastructure to represent the
+regional networks supporting London's connectivity, and it
+might fail because OpenStreetMap contributors record
+infrastructure from observable sources and local knowledge,
+so underground connections and facilities that cannot be
+identified from public observation may remain unmapped.
+</p>
+
+</div>
+
+<a class="back" href="../index.html#journal">
+← Back to all entries
+</a>
+
+</div>
+</article>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap wrap-narrow">
+    <p>Zhuoer Zhou · SOCS-SHU 289 · NYU Shanghai · Fall 2026</p>
+  </div>
+</footer>
+
+</body>
+</html>
