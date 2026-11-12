@@ -1,0 +1,286 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Week 09 · Zhuoer Zhou</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+.audit-scroll {
+  overflow-x: auto;
+  margin: 1rem 0 1.5rem;
+}
+.audit-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .9rem;
+  line-height: 1.5;
+  min-width: 800px;
+}
+.audit-table th,
+.audit-table td {
+  padding: .7rem .65rem;
+  border-bottom: 1px solid #c9cecb;
+  vertical-align: top;
+  text-align: left;
+}
+.audit-table th {
+  background: #eff3f0;
+}
+.audit-table td:first-child {
+  white-space: nowrap;
+  font-weight: 600;
+}
+.note {
+  font-size: .9rem;
+  color: #536058;
+}
+</style>
+</head>
+
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="../index.html">Zhuoer Zhou</a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../index.html#journal">Journal</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<article class="entry">
+<div class="wrap wrap-narrow">
+
+<p class="kicker">Week 09 · November 2026</p>
+
+<h1>From Maps to a StoryMap: Green Space and Recorded Crime in London</h1>
+
+<h2>The question</h2>
+
+<p>
+London's greenery and recorded-crime distributions cannot yet be compared reliably across their different mapping units.
+</p>
+
+<p>
+This week's StoryMap asks whether a greener London also means a safer London.
+I use the pattern of vegetation in selected places and the distribution of recorded crime by ward to explore a possible relationship.
+However, the two datasets do not yet measure the same geographic units.
+</p>
+
+<h2>The data</h2>
+
+<p>
+I reviewed my Week 02–08 journal entries to identify the spatial unit behind each map, its publication conditions, and how far I traced its data to the original source.
+The table includes all seven weeks, including maps I decided not to use in this StoryMap.
+</p>
+
+<div class="audit-scroll">
+<table class="audit-table">
+
+<thead>
+<tr>
+<th>Week / Dataset</th>
+<th>Mapping Unit</th>
+<th>Republication / Licence</th>
+<th>Data Origin and Decision</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>Week 02 · Climate</td>
+<td>
+GHCN-D weather station points. Heathrow and Chengdu represent individual stations rather than entire cities.
+</td>
+<td>
+Public Esri map accessed; exact republication terms require verification.
+</td>
+<td>
+Esri World Historical Climate, based on NOAA GHCN-Daily.
+Excluded because it does not directly address the relationship between urban greenery and crime.
+</td>
+</tr>
+
+<tr>
+<td>Week 03 · Terrain</td>
+<td>
+1 m elevation raster cells from the Environment Agency DTM.
+Slope was calculated using a nine-cell neighbourhood.
+</td>
+<td>
+Some live layers require an organisational subscription. Screenshot reuse terms require checking.
+</td>
+<td>
+Environment Agency DTM and SoilGrids.
+Excluded because terrain does not directly help answer my current research question.
+</td>
+</tr>
+
+<tr>
+<td>Week 04 · Vegetation</td>
+<td>
+30 m Landsat NDVI pixels in selected London locations, rather than ward-level averages.
+</td>
+<td>
+Landsat imagery is publicly accessible; specific attribution and platform reuse requirements should be checked.
+</td>
+<td>
+Landsat 8 imagery from July 30, 2024, accessed through Esri Landsat Explorer.
+Included because it introduces vegetation patterns and their limitations.
+</td>
+</tr>
+
+<tr>
+<td>Week 05 · Watersheds</td>
+<td>
+Hydrological catchments defined by elevation data and selected outlet points.
+Aqueduct uses larger geographical units.
+</td>
+<td>
+Aqueduct 4.0: CC BY 4.0. Other dataset licences require verification.
+</td>
+<td>
+MERIT-Hydro, HydroSHEDS, and WRI Aqueduct.
+Different datasets produced substantially different catchment estimates.
+Excluded because this environmental boundary comparison is not directly related to crime.
+</td>
+</tr>
+
+<tr>
+<td>Week 06 · Land Cover</td>
+<td>
+10 m Sentinel-2 land-cover classification pixels covering a selected study area.
+</td>
+<td>
+Source land-cover data: CC BY 4.0; Esri-hosted layer subject to platform terms.
+</td>
+<td>
+Esri / Impact Observatory Land Cover Explorer, 2017, 2024, and 2025.
+Excluded because it overlaps with the vegetation introduction and my existing evidence is mainly an Explorer comparison.
+</td>
+</tr>
+
+<tr>
+<td>Week 07 · Trade</td>
+<td>
+Natural Earth country polygons joined to trade statistics using country-name fields.
+</td>
+<td>
+Combined map republication terms require source-specific checking.
+</td>
+<td>
+Atlas of Economic Complexity and Natural Earth.
+Some boundary records could not be matched.
+Excluded because national trade patterns operate at a different geographical scale and do not serve this research question.
+</td>
+</tr>
+
+<tr>
+<td>Week 08 · Infrastructure</td>
+<td>
+OpenStreetMap features retrieved using a map-view bounding box.
+The extent affects which features are returned.
+</td>
+<td>
+OSM: ODbL. TeleGeography: CC BY-SA 4.0. Commercial database reuse may be restricted.
+</td>
+<td>
+OSM / Overpass, TeleGeography, and Data Center Map.
+Excluded because digital infrastructure is not directly relevant to this StoryMap.
+</td>
+</tr>
+
+</tbody>
+</table>
+</div>
+
+<p>
+For the StoryMap, I also introduced a new dataset: Police.uk street-level crime records from the Metropolitan Police and City of London Police, covering October 2025 to September 2026.
+I excluded anti-social behaviour records and used anonymised crime coordinates to allocate records to May 2026 ward boundaries.
+These are approximate ward-level crime counts, not official ward totals or population-adjusted crime rates.
+</p>
+
+<h2>The method</h2>
+
+<p>
+I selected two maps for the first StoryMap draft: my earlier NDVI map and a newly created London ward crime map.
+I left out the other maps because they either focus on different issues or do not directly contribute to the relationship I want to examine.
+</p>
+
+<p>
+I placed the NDVI map first to introduce differences in urban greenery, followed by the crime map to examine another dimension of London's urban environment.
+This order follows the research question rather than the chronology of my assignments.
+</p>
+
+<p>
+An important change occurs between the maps: the NDVI analysis uses 30 m raster pixels in selected locations, while the crime map uses administrative ward polygons across Greater London.
+These are different spatial units, so the maps cannot yet be compared directly to establish a statistical relationship.
+</p>
+
+<h2>The evidence</h2>
+
+<p>
+<a href="https://arcg.is/19L5vy4"
+target="_blank" rel="noopener noreferrer">
+View my published StoryMap: Does a Greener London Mean a Safer London? (A3 draft)
+</a>
+</p>
+
+<p>
+The StoryMap combines my earlier vegetation analysis with newly mapped crime data.
+It is an initial exploration rather than the final analysis.
+</p>
+
+<h2>What I found</h2>
+
+<p>
+Putting these maps together revealed a limitation that was not obvious when looking at either map alone.
+The NDVI map shows vegetation differences across selected sites, while the crime map shows police-recorded offences across administrative wards.
+Their combination raises a question about urban greenery and safety, but also demonstrates why choosing consistent mapping units is essential before comparing spatial patterns.
+</p>
+
+<h2>What this does not show</h2>
+
+<div class="limits">
+
+<p>
+The most important missing map is a ward-level map of green-cover percentages.
+I also need population data to calculate crime rates rather than compare raw crime counts.
+These additional datasets would allow me to examine greenery and recorded crime using more consistent spatial units.
+</p>
+
+<p>
+Until then, I cannot conclude whether greener wards tend to experience higher or lower recorded crime rates.
+Even if a relationship appears, it would not establish causation.
+Other factors, such as land use, commuting, socioeconomic conditions, and differences in crime reporting, may also shape the patterns.
+</p>
+
+<p>
+The environmental and crime datasets also cover different time periods.
+Police.uk locations are anonymised, so the ward-level counts derived from them may contain spatial allocation errors.
+</p>
+
+</div>
+
+<a class="back" href="../index.html#journal">
+← Back to all entries
+</a>
+
+</div>
+</article>
+</main>
+
+<footer class="site-foot">
+<div class="wrap wrap-narrow">
+<p>Zhuoer Zhou · SOCS-SHU 289 · NYU Shanghai · Fall 2026</p>
+</div>
+</footer>
+
+</body>
+</html>
